@@ -22,7 +22,7 @@ export class IndexerInstaller {
 
         execSync(`mkdir -p "${fullPath}"`, { stdio: 'inherit'});
 
-        execSync(`git clone git@github.com:venom-blockchain/fusion-producer.git "${fullPath}"`, {
+        execSync(`git clone https://github.com/venom-blockchain/fusion-producer.git "${fullPath}"`, {
             stdio: 'inherit',
             cwd: fullPath
         });
