@@ -2,8 +2,8 @@ import { Injectable, OnApplicationShutdown } from '@nestjs/common';
 import { OnModuleInit } from '@nestjs/common/interfaces';
 
 import { StausResponseDto } from './dto/status.dto';
-import { VenomIndexer } from '../venom-indexer/venom-indexer';
-import { Message, FilterType, MessageType, TransportType } from '../venom-indexer/types';
+import { Indexer } from 'fusion-consumer';
+import { Message, FilterType, MessageType, TransportType } from 'fusion-consumer';
 
 @Injectable()
 export class IndexerService implements OnModuleInit, OnApplicationShutdown {
@@ -11,14 +11,14 @@ export class IndexerService implements OnModuleInit, OnApplicationShutdown {
   private maxMessages = 100;
   private lastMessages: Message[] = [];
 
-  private readonly indexer: VenomIndexer;
+  private readonly indexer: Indexer;
 
   private totalEventCount = 0;
   private TIP3TransferCount = 0;
   private VenomTranserCount = 0;
 
   constructor() {
-      this.indexer = new VenomIndexer({
+      this.indexer = new Indexer({
         transport: TransportType.http2,
         //url: 'http://127.0.0.1:3000',
         //transport: TransportType.stdio,
