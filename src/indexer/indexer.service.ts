@@ -2,8 +2,8 @@ import { Injectable, OnApplicationShutdown } from '@nestjs/common';
 import { OnModuleInit } from '@nestjs/common/interfaces';
 
 import { StausResponseDto } from './dto/status.dto';
-import { Indexer } from 'fusion-consumer';
-import { Message, FilterType, MessageType, TransportType } from 'fusion-consumer';
+import { Indexer } from '@venom-blockchain/fusion';
+import { Message, FilterType, MessageType, TransportType } from '@venom-blockchain/fusion';
 
 @Injectable()
 export class IndexerService implements OnModuleInit, OnApplicationShutdown {
