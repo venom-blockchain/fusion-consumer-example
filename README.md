@@ -2,7 +2,7 @@
 
 ## Setup
 
-Clone project
+Clone repo
 
 ```bash
 git clone https://github.com/venom-blockchain/fusion-consumer-example.git
