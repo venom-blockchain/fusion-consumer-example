@@ -1,11 +1,31 @@
 # Venom Data Consumer Example
 
+## Setup
+
+Clone project
+
+```bash
+git clone https://github.com/venom-blockchain/fusion-consumer-example.git
+```
+
+Install dependencies
+
+```bash
+sudo apt update && sudo apt upgrade
+sudo apt install build-essential llvm clang pkg-config libssl-dev libsasl2-dev
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+apt install -y protobuf-compiler
+
+sudo apt install nodejs npm
+
+sudo npm install -g n
+sudo n stable
+```
 
 ## Installation
-```bash
-sudo ./prepare.sh
-```
-restart your current shell
+
 ```bash
 npm install
 ```
