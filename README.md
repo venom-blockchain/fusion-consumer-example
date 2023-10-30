@@ -2,6 +2,8 @@
 
 ## Setup
 
+Recommended hardware: 8 CPU, 32 GB RAM, 720 NVMe recommended.
+
 Clone repo
 
 ```bash
