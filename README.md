@@ -163,7 +163,7 @@ It's possible to download, compile and run the indexer before connect to it. url
         //transport: TransportType.stdio,
         abiPath: './abi',
         installPath: './indexer_bin',
-        dbPath: '/var/db/ton-kafka-producer2',
+        dbPath: '/var/db/fusion-producer',
         filters: [{
             type: FilterType.AnyMessage,
             entries: [{
