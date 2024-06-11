@@ -53,7 +53,7 @@ constructor() {
 
   // creates a new VenomIndexer object 
   this.indexer = new VenomIndexer({
-  transport: TransportType.http2, // Sets the transport type to HTTP/2 (TransportType.http2 or TransportType.stdio)
+  transport: TransportKind.http2, // Sets the transport type to HTTP/2 (TransportKind.http2 or TransportKind.stdio)
   abiPath: './abi',               // Specifies the path to the directory with ABI files
   installPath: './indexer',       // Sets the installation path for Fusion Producer
   dbPath: '/var/db/fusion',       // Sets the database path
@@ -138,7 +138,7 @@ Main class for interaction. It's constructor accepts a config object with differ
 To use it, construct VenomIndexer and specify handlers:
 ```typescript
 const indexer = new VenomIndexer({
-        transport: TransportType.http2,
+        transport: TransportKind.http2,
         url: 'http://127.0.0.1:3000'
 });
 
@@ -159,8 +159,8 @@ It's possible to download, compile and run the indexer before connect to it. url
 
 ```
       const indexer = new VenomIndexer({
-        transport: TransportType.http2,
-        //transport: TransportType.stdio,
+        transport: TransportKind.http2,
+        //transport: TransportKind.stdio,
         abiPath: './abi',
         installPath: './indexer_bin',
         dbPath: '/var/db/ton-kafka-producer2',

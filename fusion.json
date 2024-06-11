@@ -1,0 +1,39 @@
+{
+    "install_path": "./indexer_bin/",
+    "rpc_config": {
+      "listen_address": "0.0.0.0:8081",
+      "type": "simple"
+    },
+    "metrics_settings": {
+      "listen_address": "0.0.0.0:10000",
+      "collection_interval_sec": 10
+    },
+    "transport": {
+      "kind": "Http2",
+      "capacity": 1000,
+      "listen_address": "127.0.0.1:10002"
+    },
+    "scan_type": {
+      "kind": "FromS3",
+      "s3_config": {
+        "name": "",
+        "endpoint": "https://storage.googleapis.com",
+        "bucket": "venom-sahara-archive-storage",
+        "credentials": {
+          "access_key": "",
+          "secret_key": ""
+        }
+      }
+    },
+    "data_sources": [
+      {
+        "source": "block",
+        "handlers": [
+          {
+            "kind": "block",
+            "handler": "block"
+          }
+        ]
+      }
+    ]
+}

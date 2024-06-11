@@ -1,0 +1,40 @@
+{
+    "install_path": "./indexer_bin/",
+    "rpc_config": {
+      "listen_address": "0.0.0.0:8081",
+      "type": "simple"
+    },
+    "metrics_settings": {
+      "listen_address": "0.0.0.0:10000",
+      "collection_interval_sec": 10
+    },
+    "transport": {
+      "kind": "Http2",
+      "capacity": 1024,
+      "listen_address": "127.0.0.1:10002"
+    },
+    "scan_type": {
+      "kind": "FromNetwork",
+      "node_config": {
+        "db_path": "/home/dnaumov/fusion-consumer-example/indexer_bin/data/db",
+        "adnl_port": 30000,
+        "temp_keys_path": "/home/dnaumov/fusion-consumer-example/indexer_bin/data/adnl-keys.json",
+        "parallel_archive_downloads": 32
+      }
+    },
+    "data_sources": [
+      {
+        "source": "message",
+        "src": {
+          "kind": "code_hash",
+          "value": "3ba6528ab2694c118180aa3bd10dd19ff400b909ab4dcf58fc69925b2c7b12a6"
+        },
+        "handlers": [
+          {
+            "kind": "message",
+            "handler": "wallet"
+          }
+        ]
+      }
+    ]
+}
